@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;7007;800;900& display=swap');
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #fc7804;
+  --secondary-color: #545454;
+  --text-color: #333333;
+  --text-light: #f9f9f9;
+  --background-color: #f9f9f9;
+  --background-light: #fff;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --padding-base: 16px;
+  --font-family: 'rubik', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  min-height: 100vh;
+  height: 100%;
+  background-color: var(--background-light);
+  color: var(--text-color);
+}
+
+header {
+  display: flex;
+  padding: 40px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #cac4c4;
+}
+
+header > img {
+  width: 100px;
+  height: 100px;
+}
+
+header > nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  list-style: none;
+}
+
+a {
+  color: var(--secondary-color);
+  font-weight: 200;
+  text-decoration: none;
+}
+
+.menu {
+  display: none;
+  width: 50px;
+  height: 30px;
+}
+
+/* seccion ppal */
+.section_ppal {
+  margin-top: 20px;
+  padding: 20px;
+}
+.section_ppal h1 {
+  color: var(--secondary-color);
+}
+.section_ppal p {
+  font-size: 10px;
+}
+/* categorias generales (rodeadas de circulos) */
+.category-general {
+  text-align: center;
+  padding: 20px;
+}
+
+.listado-category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.listado-category li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 120px;
+}
+
+.listado-category img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #b1b0b0;
+  object-fit: cover;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.listado-category li span,
+.listado-category li {
+  font-size: 14px;
+  color: #333;
+}
+/* Galería de la tienda */
+
+.grid-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  align-content: center;
+}
+.gallery {
+  display: grid;
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  width: 100%;
+  margin: 100px auto;
+  padding: 10px 0px;
+  border-radius: 10px;
+  gap: 20px;
+}
+
+.card > img {
+  width: 80%;
+  object-fit: contain;
+}
+
+.card > h4 {
+  font-size: 14px;
+  font-weight: 300;
+}
+/* footer */
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  padding: 50px;
+  justify-content: space-around;
+  gap: 50px;
+  flex-wrap: wrap;
+  background-color: antiquewhite;
+}
+
+footer > ul {
+  list-style: none;
+  width: 250px;
+}
+
+footer > ul > li:first-child {
+  font-weight: bolder;
+}
+
+@media (max-width: 500px) {
+  header > nav {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
+}
+@media (min-width: 375px) and (max-width: 768px) {
+  /* Encabezado */
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Galería */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  /* Categorías */
+  .listado-category {
+    gap: 10px;
+  }
+
+  .listado-category img {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Footer */
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+}
